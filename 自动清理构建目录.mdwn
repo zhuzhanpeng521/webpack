@@ -1,0 +1,20 @@
+---
+title: 1.0 自动清理构建目录
+tags: webpack
+notebook: webpack
+---
+
+#### 前面我们的项目在每次打包后，不会自动清理构建目录。需要手动清理，那有没有方法可以优雅的解决这个问题呢？答案是有的，我们可以借助clean-webpack-plugin.
+```
+  npm i clean-webpack-plugin -D
+  //安装成功后  在web配置文件里添加该配置  这里以dev环境为例子
+
+  const {CleanWebpackPlugin} = require("clean-webpack-plugin")
+  
+  //引入该插件后 需要在plugins里面配置该插件   
+   plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
+  //配置完成后 快去试一试吧
+```
